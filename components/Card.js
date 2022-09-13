@@ -8,8 +8,8 @@ import Typography from "@mui/material/Typography"
 
 const CardComponent = ({ source, title, description, alt }) => {
 	return (
-		<Card sx={{ maxWidth: 345, my: 4 }}>
-			<CardMedia component="img" height="140" image={source} alt={alt} />
+		<Card sx={{ maxWidth: "90%", my: 4 }}>
+			<CardMedia component="img" height="300" image={source} alt={alt} />
 			<CardContent>
 				<Typography gutterBottom variant="h5" component="div">
 					{title}

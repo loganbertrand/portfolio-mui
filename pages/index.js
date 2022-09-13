@@ -6,20 +6,21 @@ import Box from "@mui/material/Box"
 import Carousel from "../components/Carousel"
 import Copyright from "../src/Copyright"
 import About from "../components/About"
+import Hero from "../components/Hero"
 
 export default function Index() {
 	return (
-		<Container
-			maxWidth="lg"
-			alignItems={"center"}
-			justifyContent={"center"}
-		>
-			<Typography variant="h1" component="h1" gutterBottom>
-				Your Friendly Neighborhood Web / App Developer
-			</Typography>
-			<Carousel />
-			<About />
-			<Copyright />
+		<Container maxWidth={false}>
+			<Container
+				maxWidth="xl"
+				alignItems={"center"}
+				justifyContent={"center"}
+			>
+				<Hero />
+				<Carousel />
+				<About />
+				<Copyright />
+			</Container>
 		</Container>
 	)
 }
