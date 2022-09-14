@@ -13,10 +13,6 @@ export default function Copyright() {
 				</MuiLink>{" "}
 				{new Date().getFullYear()}.
 			</Typography>
-			<Typography variant="body2" color="text.secondary" align="center">
-				{" "}
-				Image by Freepik
-			</Typography>
 		</Container>
 	)
 }

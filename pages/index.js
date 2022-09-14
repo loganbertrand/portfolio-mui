@@ -1,7 +1,5 @@
 import * as React from "react"
-import Container from "@mui/material/Container"
-import Typography from "@mui/material/Typography"
-import Box from "@mui/material/Box"
+import { Paper, Container } from "@mui/material"
 
 import Carousel from "../components/Carousel"
 import Copyright from "../src/Copyright"
@@ -10,7 +8,7 @@ import Hero from "../components/Hero"
 
 export default function Index() {
 	return (
-		<Container maxWidth={false}>
+		<Container maxWidth={false} style={{ padding: 0 }}>
 			<Container
 				maxWidth="xl"
 				alignItems={"center"}
@@ -18,7 +16,7 @@ export default function Index() {
 			>
 				<Hero />
 				<Carousel />
-				<About />
+
 				<Copyright />
 			</Container>
 		</Container>
