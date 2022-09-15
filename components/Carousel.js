@@ -1,23 +1,25 @@
 import * as React from "react"
-import Typography from "@mui/material/Typography"
-import { createTheme, ThemeProvider } from "@mui/material/styles"
+import { styled } from "@mui/material/styles"
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
-import Box from "@mui/material/Box"
+import { Container } from "@mui/material"
 
 import Card from "./Card"
 
-const theme = createTheme()
-
-theme.typography.h2 = {
-	"@media (max-width:600px)": {
+const Title = styled("div")(({ theme }) => ({
+	fontFamily: "Epilogue, sans-serif",
+	fontWeight: "600",
+	marginBottom: "0.35em",
+	[theme.breakpoints.down("md")]: {
 		textAlign: "center",
+		fontSize: "1.7em",
 	},
-	"@media (min-width:1024px)": {
+	[theme.breakpoints.up("md")]: {
 		textAlign: "left",
+		fontSize: "3.5em",
 	},
-}
+}))
 
 const Carousel = () => {
 	const settings = {
@@ -56,42 +58,44 @@ const Carousel = () => {
 		],
 	}
 	return (
-		<ThemeProvider theme={theme}>
-			<Box sx={{ my: 7 }} minHeight="50vh">
-				<Typography variant="h2" gutterBottom>
-					Projects
-				</Typography>
-				<Slider {...settings}>
-					<Card
-						title={"Chalk Esports App"}
-						description={"An app for video game tournaments"}
-						source={"images/chalk-app.png"}
-						alt={"Chalk app screenshot"}
-					/>
-					<Card
-						title={"Chalk Website"}
-						description={
-							"Website for an app for video game tournaments"
-						}
-						source={"images/chalk-site.png"}
-						alt={"Chalk website screenshot"}
-					/>
-					<Card
-						title={"Call Ozzy Website"}
-						description={
-							"A website for a Seattle Real Estate Agent"
-						}
-						source={"images/call-ozzy.png"}
-						alt={"Call Ozzy website"}
-					/>
-					<Card
-						title={"Project 4"}
-						description={"A project that showcases react hooks"}
-					/>
-					<Card title={"Project 5"} description={"Another project"} />
-				</Slider>
-			</Box>
-		</ThemeProvider>
+		<Container
+			sx={{
+				my: 7,
+			}}
+			style={{
+				minHeight: "70vh",
+			}}
+			maxWidth="xl"
+		>
+			<Title>Projects</Title>
+			<Slider {...settings}>
+				<Card
+					title={"Chalk Esports App"}
+					description={"An app for video game tournaments"}
+					source={"images/chalk-app.png"}
+					alt={"Chalk app screenshot"}
+				/>
+				<Card
+					title={"Chalk Website"}
+					description={
+						"Website for an app for video game tournaments"
+					}
+					source={"images/chalk-site.png"}
+					alt={"Chalk website screenshot"}
+				/>
+				<Card
+					title={"Call Ozzy Website"}
+					description={"A website for a Seattle Real Estate Agent"}
+					source={"images/call-ozzy.png"}
+					alt={"Call Ozzy website"}
+				/>
+				<Card
+					title={"Project 4"}
+					description={"A project that showcases react hooks"}
+				/>
+				<Card title={"Project 5"} description={"Another project"} />
+			</Slider>
+		</Container>
 	)
 }
 

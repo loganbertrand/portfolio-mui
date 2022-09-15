@@ -1,43 +1,70 @@
 import * as React from "react"
-import { Grid, Paper, Typography, Avatar, Button } from "@mui/material"
-import { createTheme, ThemeProvider } from "@mui/material/styles"
+import { useState, useEffect } from "react"
+import { Grid, Avatar } from "@mui/material"
+import { styled } from "@mui/material/styles"
 import GitHubIcon from "@mui/icons-material/GitHub"
 import LinkedInIcon from "@mui/icons-material/LinkedIn"
+import MailOutlineIcon from "@mui/icons-material/MailOutline"
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown"
 
-const theme = createTheme()
+const Title = styled("div")(({ theme }) => ({
+	fontFamily: "Epilogue, sans-serif",
+	fontWeight: "700",
+	marginBottom: "0.35em",
+	[theme.breakpoints.down("md")]: {
+		textAlign: "center",
+		fontSize: "2em",
+	},
+	[theme.breakpoints.up("md")]: {
+		textAlign: "left",
+		fontSize: "5em",
+	},
+}))
 
-theme.typography.h1 = {
-	"@media (max-width:600px)": {
-		fontSize: "3.0rem",
+const About = styled("div")(({ theme }) => ({
+	fontFamily: "Roboto, sans-serif",
+	[theme.breakpoints.down("md")]: {
 		textAlign: "center",
+		fontSize: "1em",
 	},
-	"@media (min-width:1024px)": {
-		fontSize: "5rem",
+	[theme.breakpoints.up("md")]: {
 		textAlign: "left",
+		fontSize: "1.2em",
+		fontWeight: "400",
 	},
-}
-theme.typography.h4 = {
-	"@media (max-width:600px)": {
-		fontSize: "1.5rem",
-		textAlign: "center",
-	},
-	"@media (min-width:1024px)": {
-		fontSize: "2.0rem",
-		textAlign: "left",
-	},
-}
+}))
 
 //Build container around this section to make gradients and shapes outside of it as a background element. So inner has the max width of lg but outside has no limit
 
 const Hero = () => {
+	const [visible, setVisible] = useState(true)
+
+	const listenToScroll = () => {
+		let heightToHideFrom = 300
+		const winScroll =
+			document.body.scrollTop || document.documentElement.scrollTop
+
+		if (winScroll > heightToHideFrom) {
+			visible && setVisible(false)
+		} else {
+			setVisible(true)
+		}
+	}
+
+	useEffect(() => {
+		window.addEventListener("scroll", listenToScroll)
+		return () => window.removeEventListener("scroll", listenToScroll)
+	}, [])
+
 	return (
-		<ThemeProvider theme={theme}>
+		<>
 			<Grid
 				container
 				alignItems="center"
 				justifyContent={"space-evenly"}
 				height={"100%"}
-				minHeight="90vh"
+				minHeight="85vh"
+				spacing={1}
 			>
 				<Grid
 					item
@@ -46,32 +73,74 @@ const Hero = () => {
 					justifyContent={"center"}
 					alignItems="center"
 				>
-					<Typography variant="h1">
-						Your Friendly Neighborhood Software Developer
-					</Typography>
-					<Typography variant="h4">
-						I create websites and apps focused on clean, simple user
-						experiences.
-					</Typography>
+					<Title>Your Friendly Neighborhood Software Developer</Title>
+					<About>
+						My name is Logan Bertrand and I enjoy creating
+						interactive user experiences that anyone can understand,
+						along with being highly creative in regards to problem
+						solving and innovating a website. I am a quick learner
+						excited to use the skills I have learned in the tech or
+						video game industry. I have a strong commitment to
+						mastering various languages and Front-End related
+						programming. I work well in both collaborating with
+						others or independently on projects.
+					</About>
 				</Grid>
 
 				<Grid
 					item
 					xs={12}
-					sm={5}
+					sm={4}
+					display="flex"
+					flexDirection={"column"}
 					justifyContent={"center"}
 					alignItems="center"
 				>
-					<img
-						src="images/web-dev.jpg"
-						height={"auto"}
-						width="100%"
+					<Avatar
+						alt="Logan Bertrand Profile Photo"
+						src="images/Profile-Photo-1mb.jpg"
+						sx={{ width: 350, height: 350 }}
 					/>
-					<GitHubIcon />
-					<LinkedInIcon />
+					<div
+						style={{
+							width: "80%",
+							display: "flex",
+							justifyContent: "flex-end",
+						}}
+					>
+						<a
+							href="mailto:loganwbertrand@gmail.com"
+							style={{ color: "black" }}
+						>
+							<MailOutlineIcon fontSize="medium" />
+						</a>
+						<a
+							href="https://www.linkedin.com/in/logan-bertrand-/"
+							style={{ color: "black" }}
+							target="_blank"
+						>
+							<LinkedInIcon fontSize="medium" />
+						</a>
+						<a
+							href="https://github.com/loganbertrand"
+							style={{ color: "black" }}
+							target="_blank"
+						>
+							<GitHubIcon fontSize="medium" />
+						</a>
+					</div>
 				</Grid>
 			</Grid>
-		</ThemeProvider>
+			<Grid
+				container
+				alignItems="flex-start"
+				justifyContent={"center"}
+				height={"100%"}
+				minHeight="10vh"
+			>
+				{visible && <KeyboardArrowDownIcon fontSize="large" />}
+			</Grid>
+		</>
 	)
 }
 

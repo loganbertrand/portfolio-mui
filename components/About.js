@@ -1,27 +1,28 @@
 import * as React from "react"
-import { Grid, Paper, Typography, Avatar } from "@mui/material"
-import { createTheme, ThemeProvider } from "@mui/material/styles"
+import { Grid, Paper, Typography, Avatar, Container } from "@mui/material"
 
-const theme = createTheme()
-
-theme.typography.h2 = {
-	"@media (max-width:600px)": {
-		textAlign: "center",
-	},
-	"@media (min-width:1024px)": {
-		textAlign: "left",
+const styles = {
+	title: {
+		"@media (maxWidth:600px)": {
+			textAlign: "center",
+		},
+		"@media (minWidth:1024px)": {
+			textAlign: "left",
+		},
 	},
 }
 
 const About = () => {
 	return (
-		<ThemeProvider theme={theme}>
+		<Container minHeight="50vh" maxWidth="xl">
+			<Typography variant="h2" gutterBottom style={styles.title}>
+				About
+			</Typography>
 			<Grid
 				container
 				spacing={2}
 				alignItems="center"
 				justifyContent={"space-evenly"}
-				minHeight="50vh"
 			>
 				<Grid
 					item
@@ -30,9 +31,6 @@ const About = () => {
 					justifyContent={"center"}
 					alignItems="center"
 				>
-					<Typography variant="h2" gutterBottom>
-						About
-					</Typography>
 					<Avatar
 						alt="Logan Bertrand Profile Photo"
 						src="images/Profile-Photo-1mb.jpg"
@@ -59,7 +57,7 @@ const About = () => {
 					</Typography>
 				</Grid>
 			</Grid>
-		</ThemeProvider>
+		</Container>
 	)
 }
 
