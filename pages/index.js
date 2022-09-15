@@ -16,7 +16,6 @@ export default function Index() {
 			>
 				<Hero />
 				<Carousel />
-
 				<Copyright />
 			</Container>
 		</Container>

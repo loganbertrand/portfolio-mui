@@ -3,10 +3,10 @@ import { Grid, Paper, Typography, Avatar, Container } from "@mui/material"
 
 const styles = {
 	title: {
-		"@media (max-width:600px)": {
+		"@media (maxWidth:600px)": {
 			textAlign: "center",
 		},
-		"@media (min-width:1024px)": {
+		"@media (minWidth:1024px)": {
 			textAlign: "left",
 		},
 	},

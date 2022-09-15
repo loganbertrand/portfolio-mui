@@ -1,42 +1,61 @@
 import * as React from "react"
-import {
-	Grid,
-	Paper,
-	Typography,
-	Avatar,
-	Button,
-	Container,
-} from "@mui/material"
+import { useState, useEffect } from "react"
+import { Grid, Avatar } from "@mui/material"
+import { styled } from "@mui/material/styles"
 import GitHubIcon from "@mui/icons-material/GitHub"
 import LinkedInIcon from "@mui/icons-material/LinkedIn"
 import MailOutlineIcon from "@mui/icons-material/MailOutline"
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown"
 
-const styles = {
-	title: {
-		"@media (max-width:600px)": {
-			textAlign: "center",
-			fontSize: "10px",
-		},
-		"@media (min-width:1024px)": {
-			textAlign: "left",
-		},
+const Title = styled("div")(({ theme }) => ({
+	fontFamily: "Epilogue, sans-serif",
+	fontWeight: "700",
+	marginBottom: "0.35em",
+	[theme.breakpoints.down("md")]: {
+		textAlign: "center",
+		fontSize: "2em",
 	},
-	about: {
-		"@media (max-width:600px)": {
-			textAlign: "center",
-			width: "96%",
-		},
-		"@media (min-width:1024px)": {
-			textAlign: "left",
-			maxWidth: "80%",
-		},
+	[theme.breakpoints.up("md")]: {
+		textAlign: "left",
+		fontSize: "5em",
 	},
-}
+}))
+
+const About = styled("div")(({ theme }) => ({
+	fontFamily: "Roboto, sans-serif",
+	[theme.breakpoints.down("md")]: {
+		textAlign: "center",
+		fontSize: "1em",
+	},
+	[theme.breakpoints.up("md")]: {
+		textAlign: "left",
+		fontSize: "1.2em",
+		fontWeight: "400",
+	},
+}))
 
 //Build container around this section to make gradients and shapes outside of it as a background element. So inner has the max width of lg but outside has no limit
 
 const Hero = () => {
+	const [visible, setVisible] = useState(true)
+
+	const listenToScroll = () => {
+		let heightToHideFrom = 300
+		const winScroll =
+			document.body.scrollTop || document.documentElement.scrollTop
+
+		if (winScroll > heightToHideFrom) {
+			visible && setVisible(false)
+		} else {
+			setVisible(true)
+		}
+	}
+
+	useEffect(() => {
+		window.addEventListener("scroll", listenToScroll)
+		return () => window.removeEventListener("scroll", listenToScroll)
+	}, [])
+
 	return (
 		<>
 			<Grid
@@ -54,10 +73,8 @@ const Hero = () => {
 					justifyContent={"center"}
 					alignItems="center"
 				>
-					<Typography variant="h1" style={styles.title}>
-						Your Friendly Neighborhood Software Developer
-					</Typography>
-					<Typography>
+					<Title>Your Friendly Neighborhood Software Developer</Title>
+					<About>
 						My name is Logan Bertrand and I enjoy creating
 						interactive user experiences that anyone can understand,
 						along with being highly creative in regards to problem
@@ -67,13 +84,15 @@ const Hero = () => {
 						mastering various languages and Front-End related
 						programming. I work well in both collaborating with
 						others or independently on projects.
-					</Typography>
+					</About>
 				</Grid>
 
 				<Grid
 					item
 					xs={12}
 					sm={4}
+					display="flex"
+					flexDirection={"column"}
 					justifyContent={"center"}
 					alignItems="center"
 				>
@@ -82,11 +101,34 @@ const Hero = () => {
 						src="images/Profile-Photo-1mb.jpg"
 						sx={{ width: 350, height: 350 }}
 					/>
-					<Grid>
-						<GitHubIcon />
-						<LinkedInIcon />
-						<MailOutlineIcon />
-					</Grid>
+					<div
+						style={{
+							width: "80%",
+							display: "flex",
+							justifyContent: "flex-end",
+						}}
+					>
+						<a
+							href="mailto:loganwbertrand@gmail.com"
+							style={{ color: "black" }}
+						>
+							<MailOutlineIcon fontSize="medium" />
+						</a>
+						<a
+							href="https://www.linkedin.com/in/logan-bertrand-/"
+							style={{ color: "black" }}
+							target="_blank"
+						>
+							<LinkedInIcon fontSize="medium" />
+						</a>
+						<a
+							href="https://github.com/loganbertrand"
+							style={{ color: "black" }}
+							target="_blank"
+						>
+							<GitHubIcon fontSize="medium" />
+						</a>
+					</div>
 				</Grid>
 			</Grid>
 			<Grid
@@ -96,7 +138,7 @@ const Hero = () => {
 				height={"100%"}
 				minHeight="10vh"
 			>
-				<KeyboardArrowDownIcon fontSize="large" />
+				{visible && <KeyboardArrowDownIcon fontSize="large" />}
 			</Grid>
 		</>
 	)

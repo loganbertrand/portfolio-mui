@@ -1,23 +1,25 @@
 import * as React from "react"
-import Typography from "@mui/material/Typography"
-import { createTheme, ThemeProvider } from "@mui/material/styles"
+import { styled } from "@mui/material/styles"
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
-import Box from "@mui/material/Box"
+import { Container } from "@mui/material"
 
 import Card from "./Card"
 
-const styles = {
-	title: {
-		"@media (max-width:600px)": {
-			textAlign: "center",
-		},
-		"@media (min-width:1024px)": {
-			textAlign: "left",
-		},
+const Title = styled("div")(({ theme }) => ({
+	fontFamily: "Epilogue, sans-serif",
+	fontWeight: "600",
+	marginBottom: "0.35em",
+	[theme.breakpoints.down("md")]: {
+		textAlign: "center",
+		fontSize: "1.7em",
 	},
-}
+	[theme.breakpoints.up("md")]: {
+		textAlign: "left",
+		fontSize: "3.5em",
+	},
+}))
 
 const Carousel = () => {
 	const settings = {
@@ -56,15 +58,16 @@ const Carousel = () => {
 		],
 	}
 	return (
-		<Box
+		<Container
 			sx={{
 				my: 7,
 			}}
-			minHeight="100vh"
+			style={{
+				minHeight: "70vh",
+			}}
+			maxWidth="xl"
 		>
-			<Typography variant="h2" gutterBottom style={styles.title}>
-				Projects
-			</Typography>
+			<Title>Projects</Title>
 			<Slider {...settings}>
 				<Card
 					title={"Chalk Esports App"}
@@ -92,7 +95,7 @@ const Carousel = () => {
 				/>
 				<Card title={"Project 5"} description={"Another project"} />
 			</Slider>
-		</Box>
+		</Container>
 	)
 }
 
