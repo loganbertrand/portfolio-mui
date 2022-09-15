@@ -14,6 +14,7 @@ const Title = styled("div")(({ theme }) => ({
 	[theme.breakpoints.down("md")]: {
 		textAlign: "center",
 		fontSize: "2em",
+		marginTop: "0.45em",
 	},
 	[theme.breakpoints.up("md")]: {
 		textAlign: "left",
@@ -26,6 +27,7 @@ const About = styled("div")(({ theme }) => ({
 	[theme.breakpoints.down("md")]: {
 		textAlign: "center",
 		fontSize: "1em",
+		marginBottom: "1em",
 	},
 	[theme.breakpoints.up("md")]: {
 		textAlign: "left",
