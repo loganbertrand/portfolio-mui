@@ -4,6 +4,7 @@ import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import { Container } from "@mui/material"
+import Fade from "@successtar/react-reveal"
 
 import Card from "./Card"
 
@@ -67,34 +68,36 @@ const Carousel = () => {
 			}}
 			maxWidth="xl"
 		>
-			<Title>Projects</Title>
-			<Slider {...settings}>
-				<Card
-					title={"Chalk Esports App"}
-					description={"An app for video game tournaments"}
-					source={"images/chalk-app.png"}
-					alt={"Chalk app screenshot"}
-				/>
-				<Card
-					title={"Chalk Website"}
-					description={
-						"Website for an app for video game tournaments"
-					}
-					source={"images/chalk-site.png"}
-					alt={"Chalk website screenshot"}
-				/>
-				<Card
-					title={"Call Ozzy Website"}
-					description={"A website for a Seattle Real Estate Agent"}
-					source={"images/call-ozzy.png"}
-					alt={"Call Ozzy website"}
-				/>
-				<Card
-					title={"Project 4"}
-					description={"A project that showcases react hooks"}
-				/>
-				<Card title={"Project 5"} description={"Another project"} />
-			</Slider>
+			<Fade>
+				<Title>Projects</Title>
+			</Fade>
+
+			<Fade right>
+				<Slider {...settings}>
+					<Card
+						title={"Chalk Esports App"}
+						description={"An app for video game tournaments"}
+						source={"images/chalk-app.png"}
+						alt={"Chalk app screenshot"}
+					/>
+					<Card
+						title={"Chalk App Website"}
+						description={
+							"Website for an app for video game tournaments"
+						}
+						source={"images/chalk-site.png"}
+						alt={"Chalk website screenshot"}
+					/>
+					<Card
+						title={"Call Ozzy Website"}
+						description={
+							"A website for a Seattle Real Estate Agent"
+						}
+						source={"images/call-ozzy.png"}
+						alt={"Call Ozzy website"}
+					/>
+				</Slider>
+			</Fade>
 		</Container>
 	)
 }

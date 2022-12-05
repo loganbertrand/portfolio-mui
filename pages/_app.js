@@ -25,7 +25,7 @@ export default function MyApp(props) {
 					name="viewport"
 					content="width=device-width, initial-scale=1"
 				/>
-				<title>Logan Bertrand Developer Portfolio</title>
+				<title>Logan Bertrand | Portfolio</title>
 				<meta
 					name="description"
 					content="A portfolio to showcase the work of Logan Bertrand as a Web and App Developer. Focused around front-end experiences using React, React-Native, Javascript, HTML, CSS, Express, Node, and much more."

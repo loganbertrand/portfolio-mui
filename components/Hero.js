@@ -1,10 +1,9 @@
 import * as React from "react"
 import { useState, useEffect } from "react"
+import Fade from "@successtar/react-reveal"
+import { Parallax } from "react-scroll-parallax"
 import { Grid, Avatar } from "@mui/material"
 import { styled } from "@mui/material/styles"
-import GitHubIcon from "@mui/icons-material/GitHub"
-import LinkedInIcon from "@mui/icons-material/LinkedIn"
-import MailOutlineIcon from "@mui/icons-material/MailOutline"
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown"
 
 const Title = styled("div")(({ theme }) => ({
@@ -75,18 +74,46 @@ const Hero = () => {
 					justifyContent={"center"}
 					alignItems="center"
 				>
-					<Title>Your Friendly Neighborhood Software Developer</Title>
-					<About>
-						My name is Logan Bertrand and I enjoy creating
-						interactive user experiences that anyone can understand,
-						along with being highly creative in regards to problem
-						solving and innovating a website. I am a quick learner
-						excited to use the skills I have learned in the tech or
-						video game industry. I have a strong commitment to
-						mastering various languages and Front-End related
-						programming. I work well in both collaborating with
-						others or independently on projects.
-					</About>
+					<Fade>
+						<Title>
+							Your Friendly Neighborhood Software Developer
+						</Title>
+					</Fade>
+
+					<Fade>
+						<About>
+							My name is Logan Bertrand and I enjoy creating
+							interactive user experiences that anyone can
+							understand, along with being highly creative in
+							regards to problem solving and innovating a website.
+							I am a quick learner excited to use the skills I
+							have learned in the tech or video game industry. I
+							have a strong commitment to mastering various
+							languages and Full-Stack related programming. I work
+							well in both collaborating with others or
+							independently on projects.
+						</About>
+						<br />
+						<About>
+							For a more in depth look of my background, visit my{" "}
+							<a
+								href="https://github.com/loganbertrand"
+								style={{ color: "black" }}
+								target="_blank"
+							>
+								GitHub
+							</a>{" "}
+							and{" "}
+							<a
+								href="https://www.linkedin.com/in/logan-bertrand-/"
+								style={{ color: "black" }}
+								target="_blank"
+							>
+								LinkedIn
+							</a>
+							.
+						</About>
+					</Fade>
 				</Grid>
 
 				<Grid
@@ -98,39 +125,43 @@ const Hero = () => {
 					justifyContent={"center"}
 					alignItems="center"
 				>
-					<Avatar
-						alt="Logan Bertrand Profile Photo"
-						src="images/Profile-Photo-1mb.jpg"
-						sx={{ width: 350, height: 350 }}
-					/>
-					<div
-						style={{
-							width: "80%",
-							display: "flex",
-							justifyContent: "flex-end",
-						}}
-					>
-						<a
-							href="mailto:loganwbertrand@gmail.com"
-							style={{ color: "black" }}
+					<Fade>
+						<Parallax speed={-10}>
+							<Avatar
+								alt="Logan Bertrand Profile Photo"
+								src="images/new-profile.jpg"
+								sx={{ width: 350, height: 350 }}
+							/>
+						</Parallax>
+						{/* <div
+							style={{
+								width: "80%",
+								display: "flex",
+								justifyContent: "flex-end",
+							}}
 						>
-							<MailOutlineIcon fontSize="medium" />
-						</a>
-						<a
-							href="https://www.linkedin.com/in/logan-bertrand-/"
-							style={{ color: "black" }}
-							target="_blank"
-						>
-							<LinkedInIcon fontSize="medium" />
-						</a>
-						<a
-							href="https://github.com/loganbertrand"
-							style={{ color: "black" }}
-							target="_blank"
-						>
-							<GitHubIcon fontSize="medium" />
-						</a>
-					</div>
+							<a
+								href="mailto:loganwbertrand@gmail.com"
+								style={{ color: "black" }}
+							>
+								<MailOutlineIcon fontSize="medium" />
+							</a>
+							<a
+								href="https://www.linkedin.com/in/logan-bertrand-/"
+								style={{ color: "black" }}
+								target="_blank"
+							>
+								<LinkedInIcon fontSize="medium" />
+							</a>
+							<a
+								href="https://github.com/loganbertrand"
+								style={{ color: "black" }}
+								target="_blank"
+							>
+								<GitHubIcon fontSize="medium" />
+							</a>
+						</div> */}
+					</Fade>
 				</Grid>
 			</Grid>
 			<Grid
