@@ -32,18 +32,18 @@ export default function Copyright() {
 					<MailOutlineIcon fontSize="medium" />
 				</a>
 				<a
-					href="https://www.linkedin.com/in/logan-bertrand-/"
-					style={{ color: "black" }}
-					target="_blank"
-				>
-					<LinkedInIcon fontSize="medium" />
-				</a>
-				<a
 					href="https://github.com/loganbertrand"
 					style={{ color: "black" }}
 					target="_blank"
 				>
 					<GitHubIcon fontSize="medium" />
+				</a>
+				<a
+					href="https://www.linkedin.com/in/logan-bertrand-/"
+					style={{ color: "black" }}
+					target="_blank"
+				>
+					<LinkedInIcon fontSize="medium" />
 				</a>
 			</div>
 		</Container>

@@ -39,6 +39,7 @@ const About = styled("div")(({ theme }) => ({
 
 const Hero = () => {
 	const [visible, setVisible] = useState(true)
+	const [isSmall, setIsSmall] = useState()
 
 	const listenToScroll = () => {
 		let heightToHideFrom = 300
@@ -54,6 +55,9 @@ const Hero = () => {
 
 	useEffect(() => {
 		window.addEventListener("scroll", listenToScroll)
+		if (window.width > 1000) {
+			setIsSmall(true)
+		}
 		return () => window.removeEventListener("scroll", listenToScroll)
 	}, [])
 
@@ -119,14 +123,14 @@ const Hero = () => {
 				<Grid
 					item
 					xs={12}
-					sm={4}
+					md={4}
 					display="flex"
 					flexDirection={"column"}
 					justifyContent={"center"}
 					alignItems="center"
 				>
 					<Fade>
-						<Parallax speed={-10}>
+						<Parallax speed={isSmall ? -10 : -1}>
 							<Avatar
 								alt="Logan Bertrand Profile Photo"
 								src="images/new-profile.jpg"

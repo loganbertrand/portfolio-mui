@@ -35,7 +35,7 @@ const Carousel = () => {
 			{
 				breakpoint: 1024,
 				settings: {
-					slidesToShow: 3,
+					slidesToShow: 2,
 					slidesToScroll: 1,
 					infinite: true,
 					dots: true,
@@ -44,7 +44,7 @@ const Carousel = () => {
 			{
 				breakpoint: 600,
 				settings: {
-					slidesToShow: 2,
+					slidesToShow: 1,
 					slidesToScroll: 1,
 					initialSlide: 1,
 				},
@@ -75,26 +75,40 @@ const Carousel = () => {
 			<Fade right>
 				<Slider {...settings}>
 					<Card
-						title={"Chalk Esports App"}
-						description={"An app for video game tournaments"}
+						title={"Chalk Esports"}
+						description={
+							"A video game tournament app. Built with React Native, Styled Components, Apollo GrphQL, and AWS."
+						}
 						source={"images/chalk-app.png"}
 						alt={"Chalk app screenshot"}
+						onClick={() => {
+							window.open(
+								"https://apps.apple.com/us/app/chalk-esports-tournaments/id1559663332",
+								"_blank"
+							)
+						}}
 					/>
 					<Card
 						title={"Chalk App Website"}
 						description={
-							"Website for an app for video game tournaments"
+							"The main website for Chalk Esports. Built with React, Next.js, and Styled Components. "
 						}
 						source={"images/chalk-site.png"}
 						alt={"Chalk website screenshot"}
+						onClick={() => {
+							window.open("https://www.chalkapp.co/", "_blank")
+						}}
 					/>
 					<Card
 						title={"Call Ozzy Website"}
 						description={
-							"A website for a Seattle Real Estate Agent"
+							"A one page website for a Seattle Real Estate Agent. Built with basic HTML and CSS."
 						}
 						source={"images/call-ozzy.png"}
 						alt={"Call Ozzy website"}
+						onClick={() => {
+							window.open("https://callozzy.com/", "_blank")
+						}}
 					/>
 				</Slider>
 			</Fade>
