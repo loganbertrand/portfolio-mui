@@ -20,12 +20,12 @@ export default function MyApp(props) {
 	return (
 		<CacheProvider value={emotionCache}>
 			<Head>
-				<meta charset="utf-8" />
+				<meta charSet="utf-8" />
 				<meta
 					name="viewport"
 					content="width=device-width, initial-scale=1"
 				/>
-				<title>Logan Bertrand Developer Portfolio</title>
+				<title>Logan Bertrand | Portfolio</title>
 				<meta
 					name="description"
 					content="A portfolio to showcase the work of Logan Bertrand as a Web and App Developer. Focused around front-end experiences using React, React-Native, Javascript, HTML, CSS, Express, Node, and much more."
@@ -36,7 +36,7 @@ export default function MyApp(props) {
 				<link
 					rel="stylesheet"
 					type="text/css"
-					charset="UTF-8"
+					charSet="UTF-8"
 					href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
 				/>
 				<link

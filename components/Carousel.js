@@ -4,6 +4,7 @@ import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import { Container } from "@mui/material"
+import Fade from "@successtar/react-reveal"
 
 import Card from "./Card"
 
@@ -34,7 +35,7 @@ const Carousel = () => {
 			{
 				breakpoint: 1024,
 				settings: {
-					slidesToShow: 3,
+					slidesToShow: 2,
 					slidesToScroll: 1,
 					infinite: true,
 					dots: true,
@@ -43,7 +44,7 @@ const Carousel = () => {
 			{
 				breakpoint: 600,
 				settings: {
-					slidesToShow: 2,
+					slidesToShow: 1,
 					slidesToScroll: 1,
 					initialSlide: 1,
 				},
@@ -67,34 +68,50 @@ const Carousel = () => {
 			}}
 			maxWidth="xl"
 		>
-			<Title>Projects</Title>
-			<Slider {...settings}>
-				<Card
-					title={"Chalk Esports App"}
-					description={"An app for video game tournaments"}
-					source={"images/chalk-app.png"}
-					alt={"Chalk app screenshot"}
-				/>
-				<Card
-					title={"Chalk Website"}
-					description={
-						"Website for an app for video game tournaments"
-					}
-					source={"images/chalk-site.png"}
-					alt={"Chalk website screenshot"}
-				/>
-				<Card
-					title={"Call Ozzy Website"}
-					description={"A website for a Seattle Real Estate Agent"}
-					source={"images/call-ozzy.png"}
-					alt={"Call Ozzy website"}
-				/>
-				<Card
-					title={"Project 4"}
-					description={"A project that showcases react hooks"}
-				/>
-				<Card title={"Project 5"} description={"Another project"} />
-			</Slider>
+			<Fade>
+				<Title>Projects</Title>
+			</Fade>
+
+			<Fade right>
+				<Slider {...settings}>
+					<Card
+						title={"Chalk Esports"}
+						description={
+							"A video game tournament app. Built with React Native, Styled Components, Apollo GrphQL, and AWS."
+						}
+						source={"images/chalk-app.png"}
+						alt={"Chalk app screenshot"}
+						onClick={() => {
+							window.open(
+								"https://apps.apple.com/us/app/chalk-esports-tournaments/id1559663332",
+								"_blank"
+							)
+						}}
+					/>
+					<Card
+						title={"Chalk App Website"}
+						description={
+							"The main website for Chalk Esports. Built with React, Next.js, and Styled Components. "
+						}
+						source={"images/chalk-site.png"}
+						alt={"Chalk website screenshot"}
+						onClick={() => {
+							window.open("https://www.chalkapp.co/", "_blank")
+						}}
+					/>
+					<Card
+						title={"Call Ozzy Website"}
+						description={
+							"A one page website for a Seattle Real Estate Agent. Built with basic HTML and CSS."
+						}
+						source={"images/call-ozzy.png"}
+						alt={"Call Ozzy website"}
+						onClick={() => {
+							window.open("https://callozzy.com/", "_blank")
+						}}
+					/>
+				</Slider>
+			</Fade>
 		</Container>
 	)
 }
