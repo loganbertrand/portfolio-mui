@@ -31,6 +31,7 @@ const Carousel = () => {
 		centerPadding: "2%",
 		slidesToShow: 3,
 		speed: 500,
+		swipeToSlide: true,
 		responsive: [
 			{
 				breakpoint: 1024,
@@ -77,7 +78,7 @@ const Carousel = () => {
 					<Card
 						title={"Chalk Esports"}
 						description={
-							"A video game tournament app. Built with React Native, Styled Components, Apollo GrphQL, and AWS."
+							"A video game tournament app. Built with React Native, Styled Components, Apollo GraphQL, and AWS."
 						}
 						source={"images/chalk-app.png"}
 						alt={"Chalk app screenshot"}
@@ -99,6 +100,7 @@ const Carousel = () => {
 							window.open("https://www.chalkapp.co/", "_blank")
 						}}
 					/>
+
 					<Card
 						title={"Call Ozzy Website"}
 						description={
@@ -108,6 +110,20 @@ const Carousel = () => {
 						alt={"Call Ozzy website"}
 						onClick={() => {
 							window.open("https://callozzy.com/", "_blank")
+						}}
+					/>
+					<Card
+						title={"To-do App"}
+						description={
+							"A To-do list application built with React, Styled Components and Firebase for authentication and data storage."
+						}
+						source={"images/todo-app.png"}
+						alt={"To-do app website"}
+						onClick={() => {
+							window.open(
+								"https://todo-app-eight-blue.vercel.app/",
+								"_blank"
+							)
 						}}
 					/>
 				</Slider>
