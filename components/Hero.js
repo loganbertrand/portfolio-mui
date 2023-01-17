@@ -5,6 +5,8 @@ import { Parallax } from "react-scroll-parallax"
 import { Grid, Avatar } from "@mui/material"
 import { styled } from "@mui/material/styles"
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown"
+import Image from "next/image"
+import { ImageProfile } from "./Image"
 
 const Title = styled("div")(({ theme }) => ({
 	fontFamily: "Epilogue, sans-serif",
@@ -131,40 +133,19 @@ const Hero = () => {
 				>
 					<Fade>
 						<Parallax speed={isSmall ? -10 : -1}>
-							<Avatar
-								alt="Logan Bertrand Profile Photo"
-								src="images/new-profile.jpg"
-								sx={{ width: 350, height: 350 }}
-							/>
+							<span
+								style={{
+									position: "relative",
+									overflow: "hidden",
+								}}
+							>
+								<ImageProfile
+									alt="Logan Bertrand Profile Photo"
+									width={350}
+									height={350}
+								/>
+							</span>
 						</Parallax>
-						{/* <div
-							style={{
-								width: "80%",
-								display: "flex",
-								justifyContent: "flex-end",
-							}}
-						>
-							<a
-								href="mailto:loganwbertrand@gmail.com"
-								style={{ color: "black" }}
-							>
-								<MailOutlineIcon fontSize="medium" />
-							</a>
-							<a
-								href="https://www.linkedin.com/in/logan-bertrand-/"
-								style={{ color: "black" }}
-								target="_blank"
-							>
-								<LinkedInIcon fontSize="medium" />
-							</a>
-							<a
-								href="https://github.com/loganbertrand"
-								style={{ color: "black" }}
-								target="_blank"
-							>
-								<GitHubIcon fontSize="medium" />
-							</a>
-						</div> */}
 					</Fade>
 				</Grid>
 			</Grid>

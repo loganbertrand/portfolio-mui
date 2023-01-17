@@ -80,7 +80,7 @@ const Carousel = () => {
 						description={
 							"A video game tournament app. Built with React Native, Styled Components, Apollo GraphQL, and AWS."
 						}
-						source={"images/chalk-app.png"}
+						source={"/images/chalk-app.avif"}
 						alt={"Chalk app screenshot"}
 						onClick={() => {
 							window.open(
@@ -94,7 +94,7 @@ const Carousel = () => {
 						description={
 							"The main website for Chalk Esports. Built with React, Next.js, and Styled Components. "
 						}
-						source={"images/chalk-site.png"}
+						source={"/images/chalk-site.avif"}
 						alt={"Chalk website screenshot"}
 						onClick={() => {
 							window.open("https://www.chalkapp.co/", "_blank")
@@ -106,7 +106,7 @@ const Carousel = () => {
 						description={
 							"A one page website for a Seattle Real Estate Agent. Built with basic HTML and CSS."
 						}
-						source={"images/call-ozzy.png"}
+						source={"/images/call-ozzy.avif"}
 						alt={"Call Ozzy website"}
 						onClick={() => {
 							window.open("https://callozzy.com/", "_blank")
@@ -117,7 +117,7 @@ const Carousel = () => {
 						description={
 							"A To-do list application built with React, Styled Components and Firebase for authentication and data storage."
 						}
-						source={"images/todo-app.png"}
+						source={"/images/todo-app.avif"}
 						alt={"To-do app website"}
 						onClick={() => {
 							window.open(
