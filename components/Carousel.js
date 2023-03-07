@@ -32,6 +32,8 @@ const Carousel = () => {
 		slidesToShow: 3,
 		speed: 500,
 		swipeToSlide: true,
+		arrows: true,
+		accessibility: true,
 		responsive: [
 			{
 				breakpoint: 1024,
@@ -80,7 +82,7 @@ const Carousel = () => {
 						description={
 							"A video game tournament app. Built with React Native, Styled Components, Apollo GraphQL, and AWS."
 						}
-						source={"/images/chalk-app.avif"}
+						source={"/images/chalk-app.webp"}
 						alt={"Chalk app screenshot"}
 						onClick={() => {
 							window.open(
@@ -94,7 +96,7 @@ const Carousel = () => {
 						description={
 							"The main website for Chalk Esports. Built with React, Next.js, and Styled Components. "
 						}
-						source={"/images/chalk-site.avif"}
+						source={"/images/chalk-site.webp"}
 						alt={"Chalk website screenshot"}
 						onClick={() => {
 							window.open("https://www.chalkapp.co/", "_blank")
@@ -106,7 +108,7 @@ const Carousel = () => {
 						description={
 							"A one page website for a Seattle Real Estate Agent. Built with basic HTML and CSS."
 						}
-						source={"/images/call-ozzy.avif"}
+						source={"/images/call-ozzy.webp"}
 						alt={"Call Ozzy website"}
 						onClick={() => {
 							window.open("https://callozzy.com/", "_blank")
@@ -117,7 +119,7 @@ const Carousel = () => {
 						description={
 							"A To-do list application built with React, Styled Components and Firebase for authentication and data storage."
 						}
-						source={"/images/todo-app.avif"}
+						source={"/images/todo-app.webp"}
 						alt={"To-do app website"}
 						onClick={() => {
 							window.open(
