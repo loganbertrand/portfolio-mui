@@ -128,6 +128,20 @@ const Carousel = () => {
 							)
 						}}
 					/>
+					<Card
+						title={"Freelance Tax Calculator"}
+						description={
+							"A Freelance tax calculator built with React, Styled Components to estimate taxes for 2022 and 2023."
+						}
+						source={"/images/taxcalculator.webp"}
+						alt={"To-do app website"}
+						onClick={() => {
+							window.open(
+								"https://freelance-tax-calculator.vercel.app/",
+								"_blank"
+							)
+						}}
+					/>
 				</Slider>
 			</Fade>
 		</Container>

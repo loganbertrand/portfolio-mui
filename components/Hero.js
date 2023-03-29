@@ -88,16 +88,20 @@ const Hero = () => {
 
 					<Fade>
 						<About>
-							My name is Logan Bertrand and I enjoy creating
-							interactive user experiences that anyone can
-							understand, along with being highly creative in
-							regards to problem solving and innovating a website.
-							I am a quick learner excited to use the skills I
-							have learned in the tech or video game industry. I
-							have a strong commitment to mastering various
-							languages and Full-Stack related programming. I work
-							well in both collaborating with others or
-							independently on projects.
+							Hi! My name is Logan Bertrand, and I am a software
+							developer with a passion for working with React and
+							React Native. I particularly enjoy front-end
+							development and creating intuitive and engaging user
+							interfaces. What sets me apart from other developers
+							is my background in business, which has provided me
+							with a unique perspective on how technology can be
+							used to solve real-world problems and improve the
+							user experience. I am always eager to take on new
+							challenges and collaborate with others to create
+							innovative solutions. If you're looking for a
+							developer who can bring both technical expertise and
+							a business-oriented mindset to your team, I would
+							love to chat!
 						</About>
 						<br />
 						<About>
