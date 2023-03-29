@@ -23,17 +23,48 @@ const Title = styled("div")(({ theme }) => ({
 }))
 
 const Carousel = () => {
+	const PrevArrow = (props) => {
+		const { className, style, onClick } = props
+		return (
+			<div
+				className={className}
+				style={{
+					...style,
+					display: "block",
+					transform: "scale(1.5)",
+					left: -35,
+				}}
+				onClick={onClick}
+			/>
+		)
+	}
+	const NextArrow = (props) => {
+		const { className, style, onClick } = props
+		return (
+			<div
+				className={className}
+				style={{
+					...style,
+					display: "block",
+					transform: "scale(1.5)",
+					right: -35,
+				}}
+				onClick={onClick}
+			/>
+		)
+	}
 	const settings = {
 		dots: true,
 		className: "center",
-		centerMode: "true",
 		infinite: true,
 		centerPadding: "2%",
 		slidesToShow: 3,
 		speed: 500,
-		swipeToSlide: true,
 		arrows: true,
 		accessibility: true,
+		nextArrow: <NextArrow />,
+		prevArrow: <PrevArrow />,
+		swipeToSlide: false,
 		responsive: [
 			{
 				breakpoint: 1024,
@@ -42,6 +73,7 @@ const Carousel = () => {
 					slidesToScroll: 1,
 					infinite: true,
 					dots: true,
+					swipeToSlide: true,
 				},
 			},
 			{
@@ -50,6 +82,8 @@ const Carousel = () => {
 					slidesToShow: 1,
 					slidesToScroll: 1,
 					initialSlide: 1,
+					swipeToSlide: true,
+					dots: true,
 				},
 			},
 			{
@@ -57,6 +91,8 @@ const Carousel = () => {
 				settings: {
 					slidesToShow: 1,
 					slidesToScroll: 1,
+					swipeToSlide: true,
+					dots: true,
 				},
 			},
 		],
@@ -102,16 +138,18 @@ const Carousel = () => {
 							window.open("https://www.chalkapp.co/", "_blank")
 						}}
 					/>
-
 					<Card
-						title={"Call Ozzy Website"}
+						title={"Freelance Tax Calculator"}
 						description={
-							"A one page website for a Seattle Real Estate Agent. Built with basic HTML and CSS."
+							"A Freelance tax calculator built with React, Styled Components to estimate taxes for 2022 and 2023."
 						}
-						source={"/images/call-ozzy.webp"}
-						alt={"Call Ozzy website"}
+						source={"/images/taxcalculator.webp"}
+						alt={"To-do app website"}
 						onClick={() => {
-							window.open("https://callozzy.com/", "_blank")
+							window.open(
+								"https://freelance-tax-calculator.vercel.app/",
+								"_blank"
+							)
 						}}
 					/>
 					<Card
@@ -128,18 +166,16 @@ const Carousel = () => {
 							)
 						}}
 					/>
+
 					<Card
-						title={"Freelance Tax Calculator"}
+						title={"Call Ozzy Website"}
 						description={
-							"A Freelance tax calculator built with React, Styled Components to estimate taxes for 2022 and 2023."
+							"A one page website for a Seattle Real Estate Agent. Built with basic HTML and CSS."
 						}
-						source={"/images/taxcalculator.webp"}
-						alt={"To-do app website"}
+						source={"/images/call-ozzy.webp"}
+						alt={"Call Ozzy website"}
 						onClick={() => {
-							window.open(
-								"https://freelance-tax-calculator.vercel.app/",
-								"_blank"
-							)
+							window.open("https://callozzy.com/", "_blank")
 						}}
 					/>
 				</Slider>
