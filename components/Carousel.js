@@ -168,6 +168,21 @@ const Carousel = () => {
 					/>
 
 					<Card
+						title={"Weather App"}
+						description={
+							"A weather app built with React, Typescript, Next.js, and Styled Components"
+						}
+						source={"/images/weather-app.webp"}
+						alt={"Weather app website"}
+						onClick={() => {
+							window.open(
+								"https://weather-app-gamma-sable.vercel.app",
+								"_blank"
+							)
+						}}
+					/>
+
+					{/* <Card
 						title={"Call Ozzy Website"}
 						description={
 							"A one page website for a Seattle Real Estate Agent. Built with basic HTML and CSS."
@@ -177,7 +192,7 @@ const Carousel = () => {
 						onClick={() => {
 							window.open("https://callozzy.com/", "_blank")
 						}}
-					/>
+					/> */}
 				</Slider>
 			</Fade>
 		</Container>
