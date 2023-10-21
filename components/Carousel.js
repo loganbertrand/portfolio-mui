@@ -84,6 +84,7 @@ const Carousel = () => {
 					initialSlide: 1,
 					swipeToSlide: true,
 					dots: true,
+					arrows: false,
 				},
 			},
 			{
@@ -93,6 +94,7 @@ const Carousel = () => {
 					slidesToScroll: 1,
 					swipeToSlide: true,
 					dots: true,
+					arrows: false,
 				},
 			},
 		],
