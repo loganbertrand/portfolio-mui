@@ -82,7 +82,7 @@ const Hero = () => {
 				>
 					<Fade>
 						<Title>
-							Your Friendly Neighborhood Software Developer
+							Your Friendly Neighborhood Product Manager
 						</Title>
 					</Fade>
 
