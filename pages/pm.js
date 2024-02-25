@@ -7,7 +7,7 @@ import Copyright from "../src/Copyright"
 import PMCarousel from "../components/PMCarousel"
 import Hero from "../components/Hero"
 
-export default function Index() {
+export default function PM() {
 	return (
 		<ParallaxProvider>
 			<Container maxWidth={false} style={{ padding: 0 }}>
@@ -16,7 +16,8 @@ export default function Index() {
 					alignItems={"center"}
 					justifyContent={"center"}
 				>
-					<Hero />
+					<Hero page={"pm"} />
+					<PMCarousel />
 
 					<Copyright />
 				</Container>
