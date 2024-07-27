@@ -82,26 +82,27 @@ const Hero = () => {
 				>
 					<Fade>
 						<Title>
-							Your Friendly Neighborhood Product Manager
+							Your Friendly Neighborhood Software Developer
 						</Title>
 					</Fade>
 
 					<Fade>
 						<About>
-							{/* Hi! My name is Logan Bertrand, and I am a software
-							developer with a passion for working with React and
-							React Native. I particularly enjoy front-end
-							development and creating intuitive and engaging user
-							interfaces. What sets me apart from other developers
-							is my background in business, which has provided me
-							with a unique perspective on how technology can be
-							used to solve real-world problems and improve the
-							user experience. I am always eager to take on new
-							challenges and collaborate with others to create
-							innovative solutions. If you're looking for a
-							developer who can bring both technical expertise and
-							a business-oriented mindset to your team, I would
-							love to chat! */}
+							Hi there! My name is Logan Bertrand, and I am a
+							software developer with a passion for working with
+							React and React Native. I particularly enjoy
+							front-end development and creating intuitive and
+							engaging user interfaces. What sets me apart from
+							other developers is my background in business, which
+							has provided me with a unique perspective on how
+							technology can be used to solve real-world problems
+							and improve the user experience. I am always eager
+							to take on new challenges and collaborate with
+							others to create innovative solutions. If you're
+							looking for a developer who can bring both technical
+							expertise and a business-oriented mindset to your
+							team, I would love to chat!
+							{/* 
 							Hey there! I'm Logan Bertrand, a seasoned
 							professional adept in project and product
 							management. My journey began in the vibrant world of
@@ -123,6 +124,7 @@ const Hero = () => {
 							it's leading sprint planning sessions or conducting
 							customer interviews to glean insights, I'm committed
 							to delivering results that exceed expectations.
+							*/}
 						</About>
 						<br />
 						<About>
