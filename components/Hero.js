@@ -5,7 +5,7 @@ import { Parallax } from "react-scroll-parallax"
 import { Grid, Avatar } from "@mui/material"
 import { styled } from "@mui/material/styles"
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown"
-import Image from "next/image"
+import Image from "next/legacy/image"
 import { ImageProfile } from "./Image"
 
 const Title = styled("div")(({ theme }) => ({
