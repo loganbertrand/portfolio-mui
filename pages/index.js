@@ -17,7 +17,7 @@ export default function Index() {
 					justifyContent={"center"}
 				>
 					<Hero />
-					<PMCarousel />
+					{/* <PMCarousel /> */}
 					<Carousel />
 					<Copyright />
 				</Container>
