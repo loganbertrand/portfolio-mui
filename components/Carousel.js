@@ -137,7 +137,10 @@ const Carousel = () => {
 						source={"/images/chalk-site.webp"}
 						alt={"Chalk website screenshot"}
 						onClick={() => {
-							window.open("https://www.chalkapp.co/", "_blank")
+							window.open(
+								"https://chalk-site-copy.vercel.app/",
+								"_blank"
+							)
 						}}
 					/>
 					<Card
