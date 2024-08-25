@@ -2,9 +2,8 @@ import * as React from "react"
 import { Paper, Container } from "@mui/material"
 import { ParallaxProvider } from "react-scroll-parallax"
 
-import Carousel from "../components/Carousel"
 import Copyright from "../src/Copyright"
-import PMCarousel from "../components/PMCarousel"
+
 import Hero from "../components/Hero"
 
 export default function Index() {
@@ -17,7 +16,6 @@ export default function Index() {
 					justifyContent={"center"}
 				>
 					<Hero />
-
 					<Copyright />
 				</Container>
 			</Container>

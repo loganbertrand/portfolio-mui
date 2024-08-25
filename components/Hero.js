@@ -6,6 +6,7 @@ import { Grid, Avatar, Button } from "@mui/material"
 import { styled, createTheme, ThemeProvider } from "@mui/material/styles"
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown"
 import Link from "next/link"
+import Image from "next/legacy/image"
 import { ImageProfile } from "./Image"
 
 const theme = createTheme({
